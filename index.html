@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
     * {
       margin: 0;
@@ -141,36 +142,83 @@
       background: #0097a7;
     }
 
-    /* Section Contact avec boutons visibles */
-    .contact-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 400px;
-      font-size: 20px;
-      margin-bottom: 25px;
-      color: #333;
-      background: #e7f6f9;
-      padding: 12px 18px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    /* Section Contact professionnelle */
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 188, 212, 0.2);
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      color: #00bcd4;
+      margin-bottom: 15px;
+    }
+
+    .contact-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .contact-info {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
     }
 
     .contact-btn {
+      display: inline-block;
       background-color: #00bcd4;
       color: white;
-      border: none;
+      text-decoration: none;
       padding: 10px 20px;
       border-radius: 5px;
-      cursor: pointer;
       font-weight: 600;
-      box-shadow: 0 3px 10px rgba(0,188,212,0.5);
       transition: background-color 0.3s ease;
-      user-select: none;
-      flex-shrink: 0;
     }
 
     .contact-btn:hover {
+      background-color: #0097a7;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: #00bcd4;
+      color: white;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .social-link:hover {
+      transform: scale(1.1);
       background-color: #0097a7;
     }
 
@@ -216,7 +264,7 @@
         <!-- Remplace cette image par ta propre photo -->
         <img src="assets/images/photo-placeholder.jpg" alt="Ziad Photo" />
       </div>
-      <p>Je suis Ziad, étudiant en informatique passionné par le développement web et les bases de données.</p>
+      <p>Hello, I'm Ziad, web developer specializing in front-end development and database systems, with additional skills in UI/UX design and networking."</p>
     </div>
   </section>
 
@@ -226,29 +274,55 @@
       <li>Développement Web (Frontend & Backend)</li>
       <li>Conception de bases de données</li>
       <li>Design UI/UX</li>
+      <li>Conception graphique</li>
     </ul>
   </section>
 
   <section id="skills">
     <h2>Compétences</h2>
-    <p>HTML, CSS, JavaScript, Java, Oracle, MySQL, MongoDB, Angular, Linux, Cisco</p>
+    <p>HTML, CSS, JavaScript, Java, Python , Oracle, MySQL, MongoDB, Angular, Linux, Cisco</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <p>Bientôt disponible avec mes meilleurs projets GitHub.</p>
-    <button onclick="scrollToContact()" class="btn">Me Contacter</button>
+    <p>Coming soon - featuring my best GitHub projects and technical work.</p>
   </section>
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <div class="contact-item">
-      <span>Email: ziadyourmail@gmail.com</span>
-      <button class="contact-btn" onclick="window.location.href='mailto:ziadyourmail@gmail.com'">Envoyer</button>
+    <div class="contact-container">
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3 class="contact-title">Email</h3>
+        <p class="contact-info">ziadmoussi04@gmail.com</p>
+        <a href="mailto:ziadmoussi04@gmail.com" class="contact-btn">Envoyer un email</a>
+      </div>
+      
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <h3 class="contact-title">Téléphone</h3>
+        <p class="contact-info">+212 6 17 09 06 88</p>
+        <a href="tel:+212617090688" class="contact-btn">Appeler</a>
+      </div>
+      
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h3 class="contact-title">Localisation</h3>
+        <p class="contact-info">Maroc</p>
+        <a href="https://maps.google.com" target="_blank" class="contact-btn">Voir sur la carte</a>
+      </div>
     </div>
-    <div class="contact-item">
-      <span>Téléphone: +212 600000000</span>
-      <button class="contact-btn" onclick="window.location.href='tel:+212600000000'">Appeler</button>
+    
+    <div class="social-links">
+      <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
     </div>
   </section>
 
@@ -260,12 +334,6 @@
     function toggleMenu() {
       const navLinks = document.getElementById("nav-links");
       navLinks.classList.toggle("active");
-    }
-
-    function scrollToContact() {
-      document.getElementById("contact").scrollIntoView({
-        behavior: "smooth"
-      });
     }
 
     const sections = document.querySelectorAll("section");
@@ -284,4 +352,3 @@
   </script>
 </body>
 </html>
-
