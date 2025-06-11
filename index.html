@@ -1,1 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio | Ziad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      width: 50px;
+      height: 4px;
+      background: #00bcd4;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .photo-frame img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #00bcd4;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    li::before {
+      content: "✓ ";
+      color: #00bcd4;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      background: #0097a7;
+    }
+
+    /* Section Contact avec boutons visibles */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 400px;
+      font-size: 20px;
+      margin-bottom: 25px;
+      color: #333;
+      background: #e7f6f9;
+      padding: 12px 18px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .contact-btn {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 3px 10px rgba(0,188,212,0.5);
+      transition: background-color 0.3s ease;
+      user-select: none;
+      flex-shrink: 0;
+    }
+
+    .contact-btn:hover {
+      background-color: #0097a7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+      color: white;
+    }
+
+    /* Animation à l'apparition */
+    .hidden-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .show-section {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ziad Portfolio</h1>
+    <nav>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul id="nav-links">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="photo-frame">
+        <!-- Remplace cette image par ta propre photo -->
+        <img src="assets/images/photo-placeholder.jpg" alt="Ziad Photo" />
+      </div>
+      <p>Je suis Ziad, étudiant en informatique passionné par le développement web et les bases de données.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <ul>
+      <li>Développement Web (Frontend & Backend)</li>
+      <li>Conception de bases de données</li>
+      <li>Design UI/UX</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Compétences</h2>
+    <p>HTML, CSS, JavaScript, Java, Oracle, MySQL, MongoDB, Angular, Linux, Cisco</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Bientôt disponible avec mes meilleurs projets GitHub.</p>
+    <button onclick="scrollToContact()" class="btn">Me Contacter</button>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-item">
+      <span>Email: ziadyourmail@gmail.com</span>
+      <button class="contact-btn" onclick="window.location.href='mailto:ziadyourmail@gmail.com'">Envoyer</button>
+    </div>
+    <div class="contact-item">
+      <span>Téléphone: +212 600000000</span>
+      <button class="contact-btn" onclick="window.location.href='tel:+212600000000'">Appeler</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ziad. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("nav-links");
+      navLinks.classList.toggle("active");
+    }
+
+    function scrollToContact() {
+      document.getElementById("contact").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show-section");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      section.classList.add("hidden-section");
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
 
